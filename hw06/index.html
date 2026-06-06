@@ -141,10 +141,6 @@
     <div class="col twenty"><a href="../hw04/index.html">04</a></div>
     <div class="col twenty"><a href="../hw05/index.html">05</a></div>
     <div class="col twenty"><a href="../hw06/index.html">06</a></div>
-    <div class="col twenty"><a href="../hw06/index.html">07</a></div>
-    <div class="col twenty"><a href="../hw06/index.html">08</a></div>
-    <div class="col twenty"><a href="../hw06/index.html">09</a></div>
-    <div class="col twenty"><a href="../hw06/index.html">10</a></div>
   </div>
 
   <!-- ------------------------------------------------>
@@ -157,7 +153,7 @@
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。
+      本次作業主要利用 ComfyUI 實作穩定擴散文生影片。為提升專案的擴展性與可維護性，將原本運行於 Google Colab 的流程完整遷移至本地端的 Anaconda 虛擬環境。環境建置完成後，透過修改 Batch Prompt 與 Negative Prompt 參數，導入特定角色與時間場景變化的關鍵字，最終成功於本地端順利產出動態影像，完成從雲端遷移、環境除錯到參數微調的完整部署流程。
     </div>
   </div>
 
@@ -173,22 +169,22 @@
         </tr>
         <tr>
           <td rowspan="4" id="myTotal"></td>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox1"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox1" checked></td>
           <td id='m1'>4</td>
-          <td>Simple baseline - 描述</td>
+          <td>Simple baseline - Comfy UI 環境設定完成</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox2"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox2" checked></td>
           <td id='m2'>4</td>
-          <td>Medium baseline - 描述</td>
+          <td>Medium baseline - 生成角色的圖片</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox3"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox3" checked></td>
           <td id='m3'>2</td>
-          <td>Strong baseline - 描述</td>
+          <td>Strong baseline - 生成完整角色動畫</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox4" checked></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox4"></td>
           <td id='m4'>-10</td>
           <td>沒有寫100字心得</td>
         </tr>
@@ -199,13 +195,46 @@
 
   <!-- ------------------------------------------------>
   <div class="row hw12 bottomrow">
-    <div class="col-md-12 twenty">
-      <video id="video1" style="width:100%;max-width:100%;" controls="">
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-      </video>
+    <div class="col-md-12 twenty" style="background-color:#00AC48;">
+      <figcaption>Comfy UI 環境設定完成</figcaption>
+      <a href="https://civitai.com/models/61643?modelVersionId=67841">CheckPoint: based66_v30</a><br>
+      <a href="https://civitai.com/models/69977/chibi-laugh">LoRA:  chibi-laugh</a><br>  
+      <img src="1.png"  width="100%"><br>
+    </div>
+  </div>
+  
+  <div class="row hw12 bottomrow">
+    <div class="col-md-12 twenty" style="background-color:#ff0000;">
+      <figcaption>生成角色的圖片 - 1</figcaption>
+      <img src="2.png"  width="100%"><br>
     </div>
   </div>
 
+  
+  <div class="row hw12 bottomrow">
+    <div class="col-md-12 twenty" style="background-color:#7030a0;">
+      <figcaption>生成完整角色動畫 - 1</figcaption>
+      <img src="3.gif" width="100%"><br>
+      <td> 使用提示詞:
+          "0" :"(frieren:1.2), 1girl, elf, long white hair, twintails, green eyes, pointed ears, white capelet, black dress, black pantyhose, brown boots, calm expression, walking, morning forest, sunbeams through leaves, misty, nature",
+          "10" :"(frieren:1.2), 1girl, elf, long white hair, twintails, green eyes, pointed ears, white capelet, black dress, black pantyhose, brown boots, calm expression, walking, morning forest, sunbeams through leaves, misty, nature",
+          "20" :"(frieren:1.2), 1girl, elf, long white hair, twintails, green eyes, pointed ears, white capelet, black dress, black pantyhose, brown boots, calm expression, walking, morning forest, sunbeams through leaves, misty, nature",
+          "30" :"(frieren:1.2), 1girl, elf, long white hair, twintails, green eyes, pointed ears, white capelet, black dress, black pantyhose, brown boots, calm expression, walking, sunny meadow, blooming wildflowers, clear blue sky, bright daylight",
+          "40" :"(frieren:1.2), 1girl, elf, long white hair, twintails, green eyes, pointed ears, white capelet, black dress, black pantyhose, brown boots, calm expression, walking, sunny meadow, blooming wildflowers, clear blue sky, bright daylight",
+          "50" :"(frieren:1.2), 1girl, elf, long white hair, twintails, green eyes, pointed ears, white capelet, black dress, black pantyhose, brown boots, calm expression, walking, sunny meadow, blooming wildflowers, clear blue sky, bright daylight",
+          "60" :"(frieren:1.2), 1girl, elf, long white hair, twintails, green eyes, pointed ears, white capelet, black dress, black pantyhose, brown boots, calm expression, walking, ancient stone ruins, sunset, golden hour, warm lighting, long shadows",
+          "70" :"(frieren:1.2), 1girl, elf, long white hair, twintails, green eyes, pointed ears, white capelet, black dress, black pantyhose, brown boots, calm expression, walking, ancient stone ruins, sunset, golden hour, warm lighting, long shadows",
+          "80" :"(frieren:1.2), 1girl, elf, long white hair, twintails, green eyes, pointed ears, white capelet, black dress, black pantyhose, brown boots, calm expression, walking, ancient stone ruins, sunset, golden hour, warm lighting, long shadows",
+          "90" :"(frieren:1.2), 1girl, elf, long white hair, twintails, green eyes, pointed ears, white capelet, black dress, black pantyhose, brown boots, calm expression, walking, night, starry sky, glowing blue flowers, moonlight",
+          "100" :"(frieren:1.2), 1girl, elf, long white hair, twintails, green eyes, pointed ears, white capelet, black dress, black pantyhose, brown boots, calm expression, walking, night, starry sky, glowing blue flowers, moonlight",
+          "110" :"(frieren:1.2), 1girl, elf, long white hair, twintails, green eyes, pointed ears, white capelet, black dress, black pantyhose, brown boots, calm expression, walking, night, starry sky, glowing blue flowers, moonlight"
+          <br><br>
+          使用負面提示詞:
+          (bad quality, worst quality:1.2), (nsfw:1.2), sheer, transparent, translucent, revealing, wet clothes, modern clothes, short hair, wrong eye color, running, overly emotional, smiling widely, poorly drawn face, poorly drawn hands, extra limbs
+      </td>
+    </div>
+  </div>
+  <!-- ------------------------------------------------>
   <!-- ------------------------------------------------>
 
   <!-- ------------------------------------------------>
